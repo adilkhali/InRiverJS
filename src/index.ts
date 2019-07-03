@@ -1,5 +1,5 @@
 import Config from "./config";
-import { Channel, Syndicate, Query } from "./models";
+import { Channel, Syndicate, Query, System} from "./models";
 import { IRequest } from "./types";
 import Request from "./utils/request";
 
@@ -7,6 +7,7 @@ export default class InRiverAPIClient {
   private request: IRequest;
   private channel: Channel;
   private syndicate: Syndicate;
+  private systemCongifuration: System;
   private query: Query;
 
   constructor(
@@ -39,5 +40,13 @@ export default class InRiverAPIClient {
     }
     this.query = new Query(this.request);
     return this.query;
+  }
+
+  public get system() {
+    if (this.systemCongifuration !== undefined) {
+      return this.systemCongifuration;
+    }
+    this.systemCongifuration = new System(this.request);
+    return this.systemCongifuration;
   }
 }

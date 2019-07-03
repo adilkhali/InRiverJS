@@ -77,3 +77,24 @@ export interface ISyndications {
   workareaName: string;
   workareaId: string;
 }
+export interface IImageConfiguration {
+  id: number;
+  name: string;
+  extension: string;
+  outputExtension: string;
+  arguments: string;
+}
+
+export interface IRoles {
+  id: number;
+  name: string;
+  description: string;
+  permissions: [];
+}
+
+export interface ISegments {
+  id: 0;
+  name: string;
+  description: string;
+  roles: IRoles[];
+}

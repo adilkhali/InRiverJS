@@ -9,7 +9,7 @@ export default class Syndicate {
   }
 
   /**
-   * Returns All Syndications
+   * Returns all Syndications
    */
   public getAll(): AxiosPromise<ISyndications[]> {
     return this.request.getInstance().get(`syndications`);

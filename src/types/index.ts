@@ -1,4 +1,4 @@
-import {AxiosInstance} from "axios";
+import { AxiosInstance } from "axios";
 
 export interface IConfig {
   apiRoot: string;
@@ -49,13 +49,13 @@ export interface IEntityList {
 }
 
 export interface IEntityLink {
-    id: 7;
-    isActive: boolean;
-    linkTypeId: string;
-    sourceEntityId: number;
-    targetEntityId: number;
-    linkEntityId: string;
-    index: number;
+  id: 7;
+  isActive: boolean;
+  linkTypeId: string;
+  sourceEntityId: number;
+  targetEntityId: number;
+  linkEntityId: string;
+  index: number;
 }
 
 export interface IStructureEntities {
@@ -66,4 +66,14 @@ export interface IStructureEntities {
   path: string;
   linkEntityId: 0;
   linkTypeIdFromParent: string;
+}
+export interface ISyndications {
+  extensionDisplayName: string;
+  extensionId: string;
+  id: number;
+  mappingName: string;
+  name: string;
+  outputFormat: string;
+  workareaName: string;
+  workareaId: string;
 }

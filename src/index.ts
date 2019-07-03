@@ -1,14 +1,15 @@
 import Config from "./config";
-import { Channel, Syndicate, Query, System} from "./models";
+import { Channel, Syndicate, Query, System, Media} from "./models";
 import { IRequest } from "./types";
 import Request from "./utils/request";
 
 export default class InRiverAPIClient {
   private request: IRequest;
-  private channel: Channel;
-  private syndicate: Syndicate;
-  private systemCongifuration: System;
-  private query: Query;
+  private InRiverChannel: Channel;
+  private InRiverSyndicate: Syndicate;
+  private InRiverCongifuration: System;
+  private InRiverQuery: Query;
+  private InRiverMedia: Media;
 
   constructor(
     apiKey: string,
@@ -18,35 +19,43 @@ export default class InRiverAPIClient {
     this.request = new Request(new Config(apiKey, apiRoot, apiversion));
   }
 
-  public get channels() {
-    if (this.channel !== undefined) {
-      return this.channel;
+  public get Channel() {
+    if (this.InRiverChannel !== undefined) {
+      return this.InRiverChannel;
     }
-    this.channel = new Channel(this.request);
-    return this.channel;
+    this.InRiverChannel = new Channel(this.request);
+    return this.InRiverChannel;
   }
 
-  public get syndicates() {
-    if (this.syndicate !== undefined) {
-      return this.syndicate;
+  public get Syndicates() {
+    if (this.InRiverSyndicate !== undefined) {
+      return this.InRiverSyndicate;
     }
-    this.syndicate = new Syndicate(this.request);
-    return this.syndicate;
+    this.InRiverSyndicate = new Syndicate(this.request);
+    return this.InRiverSyndicate;
   }
 
-  public get queries() {
-    if (this.query !== undefined) {
-      return this.query;
+  public get Query() {
+    if (this.InRiverQuery !== undefined) {
+      return this.InRiverQuery;
     }
-    this.query = new Query(this.request);
-    return this.query;
+    this.InRiverQuery = new Query(this.request);
+    return this.InRiverQuery;
   }
 
-  public get system() {
-    if (this.systemCongifuration !== undefined) {
-      return this.systemCongifuration;
+  public get System() {
+    if (this.InRiverCongifuration !== undefined) {
+      return this.InRiverCongifuration;
     }
-    this.systemCongifuration = new System(this.request);
-    return this.systemCongifuration;
+    this.InRiverCongifuration = new System(this.request);
+    return this.InRiverCongifuration;
+  }
+
+  public get Media() {
+    if (this.InRiverMedia !== undefined) {
+      return this.InRiverMedia;
+    }
+    this.InRiverMedia = new Media(this.request);
+    return this.InRiverMedia;
   }
 }

@@ -98,3 +98,33 @@ export interface ISegments {
   description: string;
   roles: IRoles[];
 }
+
+
+export interface IMediaInfoModel {
+  fileId?: number ;
+  url?: string ;
+  fileName?: string ;
+  extension?: string ;
+  fileSize?: number ;
+  dateCreated?: string ;
+  lastModified?: string ;
+  entityId?: number ;
+}
+export interface IBase64FileModelWithLink {
+  fileName?: string;
+  data?: string;
+  resourceLink?: IResourceLinkModel;
+}
+export interface IUrlFileModelWithLink {
+  fileName?: string;
+  overrideUrlFileName?: string;
+  resourceLink?: IResourceLinkModel;
+}
+export interface IExternalUrlFileModelWithLink {
+  url?: string;
+  resourceLink?: IResourceLinkModel;
+}
+export interface IResourceLinkModel {
+  sourceEntityId?: number;
+  linkTypeId?: string;
+}

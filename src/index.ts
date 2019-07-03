@@ -1,5 +1,5 @@
 import Config from "./config";
-import { Channel, Syndicate, Query, System, Media} from "./models";
+import { Channel, Syndicate, Query, System, Media, Link} from "./models";
 import { IRequest } from "./types";
 import Request from "./utils/request";
 
@@ -10,6 +10,7 @@ export default class InRiverAPIClient {
   private InRiverCongifuration: System;
   private InRiverQuery: Query;
   private InRiverMedia: Media;
+  private InRiverLink: Link;
 
   constructor(
     apiKey: string,
@@ -57,5 +58,13 @@ export default class InRiverAPIClient {
     }
     this.InRiverMedia = new Media(this.request);
     return this.InRiverMedia;
+  }
+
+  public get Link() {
+    if (this.InRiverLink !== undefined) {
+      return this.InRiverLink;
+    }
+    this.InRiverLink = new Link(this.request);
+    return this.InRiverLink;
   }
 }

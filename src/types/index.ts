@@ -99,16 +99,15 @@ export interface ISegments {
   roles: IRoles[];
 }
 
-
 export interface IMediaInfoModel {
-  fileId?: number ;
-  url?: string ;
-  fileName?: string ;
-  extension?: string ;
-  fileSize?: number ;
-  dateCreated?: string ;
-  lastModified?: string ;
-  entityId?: number ;
+  fileId?: number;
+  url?: string;
+  fileName?: string;
+  extension?: string;
+  fileSize?: number;
+  dateCreated?: string;
+  lastModified?: string;
+  entityId?: number;
 }
 export interface IBase64FileModelWithLink {
   fileName?: string;
@@ -127,4 +126,14 @@ export interface IExternalUrlFileModelWithLink {
 export interface IResourceLinkModel {
   sourceEntityId?: number;
   linkTypeId?: string;
+}
+
+export interface ILinkModel {
+  id?: number;
+  isActive?: boolean;
+  linkTypeId: string;
+  sourceEntityId: number;
+  targetEntityId: number;
+  linkEntityId?: number;
+  index?: number;
 }

@@ -1,7 +1,7 @@
 import {
   IRequest,
   IChannel,
-  IEntityList,
+  IEntityListModel,
   IEntityLink,
   IStructureEntities
 } from "../types";
@@ -41,7 +41,7 @@ export default class Channel {
    * Returns a list of entities in a channel
    * @param channelId The unique identifier of the Channel.
    */
-  public getEntityList(channelId: number): AxiosPromise<IEntityList> {
+  public getEntityList(channelId: number): AxiosPromise<IEntityListModel> {
     return this.request.getInstance().get(`channels/${channelId}/entitylist`);
   }
 
@@ -50,13 +50,8 @@ export default class Channel {
    * @param channelId The unique identifier of the Channel.
    * @param entityTypeId The unique identifier of the Entity.
    */
-  public getEntityTypeIdList(
-    channelId: number,
-    entityTypeId: number
-  ): AxiosPromise<IEntityList> {
-    return this.request
-      .getInstance()
-      .get(`channels/${channelId}/entitylist?entityTypeId=${entityTypeId}`);
+  public getEntityTypeIdList( channelId: number, entityTypeId: number ): AxiosPromise<IEntityListModel> {
+    return this.request.getInstance() .get(`channels/${channelId}/entitylist?entityTypeId=${entityTypeId}`);
   }
 
   /**
@@ -64,15 +59,8 @@ export default class Channel {
    * @param channelId The unique identifier of the Channel.
    * @param entityId The unique identifier of the Entity.
    */
-  public getEntityOnboundLinks(
-    channelId: number,
-    entityId: number
-  ): AxiosPromise<IEntityLink[]> {
-    return this.request
-      .getInstance()
-      .get(
-        `channels/${channelId}/entities/${entityId}/links?linkDirection=inbound`
-      );
+  public getEntityOnboundLinks(channelId: number,entityId: number): AxiosPromise<IEntityLink[]> {
+    return this.request.getInstance().get(`channels/${channelId}/entities/${entityId}/links?linkDirection=inbound`);
   }
 
   /**
@@ -80,15 +68,8 @@ export default class Channel {
    * @param channelId The unique identifier of the Channel.
    * @param entityId The unique identifier of the Entity.
    */
-  public getEntityOutboundLinks(
-    channelId: number,
-    entityId: number
-  ): AxiosPromise<IEntityLink[]> {
-    return this.request
-      .getInstance()
-      .get(
-        `channels/${channelId}/entities/${entityId}/links?linkDirection=outbound`
-      );
+  public getEntityOutboundLinks(channelId: number,entityId: number): AxiosPromise<IEntityLink[]> {
+    return this.request.getInstance().get(`channels/${channelId}/entities/${entityId}/links?linkDirection=outbound`);
   }
 
   /**
@@ -96,13 +77,8 @@ export default class Channel {
    * @param channelId The unique identifier of the Channel.
    * @param entityId The unique identifier of the Entity.
    */
-  public getStructureEntities(
-    channelId: number,
-    entityId: number
-  ): AxiosPromise<IStructureEntities[]> {
-    return this.request
-      .getInstance()
-      .get(`channels/${channelId}/entities/${entityId}/structureentities`);
+  public getStructureEntities(channelId: number, entityId: number): AxiosPromise<IStructureEntities[]> {
+    return this.request.getInstance().get(`channels/${channelId}/entities/${entityId}/structureentities`);
   }
 
   /**

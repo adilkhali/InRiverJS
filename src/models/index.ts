@@ -4,6 +4,7 @@ import Query from "./Query";
 import System from "./System";
 import Media from "./Media";
 import Link from "./Link";
+import Workarea from "./Workarea";
 
 export {
   Channel,
@@ -11,5 +12,6 @@ export {
   Query,
   System,
   Media,
-  Link
+  Link,
+  Workarea
 };

@@ -12,13 +12,13 @@ export interface IRequest {
 }
 
 export interface IChannel {
-  id: number;
-  displayName: string;
-  displayDescription: string;
-  entityTypeId: string;
-  createdDate: string;
-  modifiedDate: string;
-  isPublished: boolean;
+  id?: number;
+  displayName?: string;
+  displayDescription?: string;
+  entityTypeId?: string;
+  createdDate?: string;
+  modifiedDate?: string;
+  isPublished?: boolean;
 }
 
 export interface IEntity {
@@ -43,7 +43,7 @@ export interface IEntity {
   segmentName: string;
 }
 
-export interface IEntityList {
+export interface IEntityListModel {
   count: number;
   entityIds: string[];
 }
@@ -136,4 +136,53 @@ export interface ILinkModel {
   targetEntityId: number;
   linkEntityId?: number;
   index?: number;
+}
+
+export interface IWorkAreaFolderModel {
+  id?: string;
+  name?: string;
+  isQuery?: boolean;
+  index?: number;
+}
+
+export interface IWorkAreaTreeFolderModel {
+  id?: number;
+  name?: string;
+  isQuery?: boolean;
+  folders?: IWorkAreaTreeFolderModel[];
+}
+
+export interface IWorkAreaCreationModel {
+  name: string;
+  isShared: boolean;
+  query?: IQueryModel;
+  entityIds?: number[];
+  index?: number;
+  parentId?: string;
+  username?: string;
+}
+
+export interface IQueryModel {
+  systemCriteria?: ISystemCriterionModel[];
+  dataCriteria?: IDataCriterionModel[];
+  linkCriterion?: ILinkCriterionModel;
+}
+
+export interface ISystemCriterionModel {
+  type?: string;
+  value?: {};
+  operator?: string;
+}
+
+export interface ILinkCriterionModel {
+  dataCriteria?: IDataCriterionModel[];
+  linkTypeId?: string;
+  direction?: string;
+  linkExists?: boolean;
+}
+export interface IDataCriterionModel {
+  fieldTypeId?: string;
+  value?: {};
+  language?: string;
+  operator?: string;
 }

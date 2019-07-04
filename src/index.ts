@@ -1,5 +1,5 @@
 import Config from "./config";
-import { Channel, Syndicate, Query, System, Media, Link} from "./models";
+import { Channel, Syndicate, Query, System, Media, Link, Workarea} from "./models";
 import { IRequest } from "./types";
 import Request from "./utils/request";
 
@@ -11,6 +11,7 @@ export default class InRiverAPIClient {
   private InRiverQuery: Query;
   private InRiverMedia: Media;
   private InRiverLink: Link;
+  private InWorkarea: Workarea;
 
   constructor(
     apiKey: string,
@@ -66,5 +67,13 @@ export default class InRiverAPIClient {
     }
     this.InRiverLink = new Link(this.request);
     return this.InRiverLink;
+  }
+
+  public get Workarea() {
+    if (this.InWorkarea !== undefined) {
+      return this.InWorkarea;
+    }
+    this.InWorkarea = new Workarea(this.request);
+    return this.InWorkarea;
   }
 }

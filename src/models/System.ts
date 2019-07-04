@@ -12,56 +12,56 @@ export default class System {
    * Returns available image configurations
    */
   public ImageConfigurations(): AxiosPromise<string[]> {
-    return this.request.getInstance().post(`/system/imageconfigurations`);
+    return this.request.getInstance().get(`/system/imageconfigurations`);
   }
 
   /**
    * Return full details of available image configurations Response
    */
   public ImageConfigurationDetails(): AxiosPromise<IImageConfiguration> {
-    return this.request.getInstance().post(`/system/imageconfigurationdetails`);
+    return this.request.getInstance().get(`/system/imageconfigurationdetails`);
   }
 
   /**
    * Return a list of server settings
    */
   public AllServerSettings(): AxiosPromise {
-    return this.request.getInstance().post(`/system/serversettings`);
+    return this.request.getInstance().get(`/system/serversettings`);
   }
 
   /**
    * Return a list of server settings
    */
   public ServerSetting(settingNames: string): AxiosPromise {
-    return this.request.getInstance().post(`/system/serversettings?settingNames=${settingNames}`);
+    return this.request.getInstance().get(`/system/serversettings?settingNames=${settingNames}`);
   }
 
   /**
    * Return a list of user roles and permissions
    */
   public Roles(): AxiosPromise<IRoles[]> {
-    return this.request.getInstance().post(`/system/roles`);
+    return this.request.getInstance().get(`/system/roles`);
   }
 
   /**
    * Return a list of user roles and permissions for a specific user
    */
   public UserRoles(Username: string): AxiosPromise<IRoles[]> {
-    return this.request.getInstance().post(`/system/roles?forUsername=${Username}`);
+    return this.request.getInstance().get(`/system/roles?forUsername=${Username}`);
   }
 
   /**
    * Return a list of segments
    */
   public Segments(Username: string): AxiosPromise<ISegments[]> {
-    return this.request.getInstance().post(`/system/segments?forUsername=${Username}`);
+    return this.request.getInstance().get(`/system/segments?forUsername=${Username}`);
   }
 
   /**
    * Return a list of segments for a specific user
    */
   public UserSegments(Username: string): AxiosPromise<ISegments[]> {
-    return this.request.getInstance().post(`/system/segments?forUsername=${Username}`);
+    return this.request.getInstance().get(`/system/segments?forUsername=${Username}`);
   }
 
 }

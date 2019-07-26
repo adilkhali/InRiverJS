@@ -280,3 +280,70 @@ export interface ISpecificationTemplateModel {
   index?: 0;
   cvlId?: string;
 }
+
+export interface IEntitySummaryModel {
+  id?: number;
+  displayName?: string;
+  displayDescription?: string;
+  version?: string;
+  lockedBy?: string;
+  createdBy?: string;
+  createdDate?: string;
+  formattedCreatedDate?: string;
+  modifiedBy?: string;
+  modifiedDate?: string;
+  formattedModifiedDate?: string;
+  resourceUrl?: string;
+  entityTypeId?: string;
+  entityTypeDisplayName?: string;
+  completeness?: number;
+  fieldSetId?: string;
+  fieldSetName?: string;
+  segmentId?: number;
+  segmentName?: string;
+}
+
+export interface IFieldValueModel {
+  fieldTypeId: string;
+  value: {};
+}
+
+export interface IEntityCreationModel {
+  entityTypeId: string;
+  fieldValues?: IFieldValueModel[];
+  segmentId?: number;
+}
+
+export interface IMapUniqueValuesModel {
+  fieldTypeId: string;
+  uniqueValues: [];
+}
+
+export interface IEntityModel {
+  fieldTypeId: string;
+  entityId: number;
+  fieldTypeDisplayName: string;
+  fieldTypeDescription: string;
+  fieldDataType: string;
+  value: {};
+  displayValue: {};
+  isMultiValue: boolean;
+  isHidden: boolean;
+  isReadOnly: boolean;
+  isMandatory: boolean;
+  isUnique: boolean;
+  isExcludedFromDefaultView: boolean;
+  includedInFieldSets: string[];
+  categoryId: string;
+  categoryName: string;
+  index: number;
+  revision: number;
+  cvlId: string;
+  parentCvlId: string;
+  settings: {};
+}
+
+export interface ISpecificationValueModel {
+  specificationFieldTypeId: string ;
+  value: {};
+}

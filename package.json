@@ -7,7 +7,7 @@
   "main": "./src/index.ts",
   "typings": "./src/index",
   "scripts": {
-    "start": "tsc && node dist/test.js",
+    "start": "tsc && node dist/test/index.test.js",
     "build": "tsc",
     "test": "jest"
   },

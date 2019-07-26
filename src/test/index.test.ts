@@ -1,7 +1,8 @@
 import InRiverAPIClient from "../index";
 
 const api = new InRiverAPIClient(
-  "303cd25be11c26f5890b51c8f9527d81",
+  "ab3027bb3170177af46f2d6f233ba6f8",
   "https://partnerapieuw.productmarketingcloud.com"
 );
 
+api.Model.getCVLValue("ActivityStatus").then((result) => console.log(result.data));

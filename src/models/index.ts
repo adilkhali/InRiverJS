@@ -5,6 +5,7 @@ import System from "./System";
 import Media from "./Media";
 import Link from "./Link";
 import Workarea from "./Workarea";
+import Model from "./Model";
 
 export {
   Channel,
@@ -13,5 +14,6 @@ export {
   System,
   Media,
   Link,
-  Workarea
+  Workarea,
+  Model
 };

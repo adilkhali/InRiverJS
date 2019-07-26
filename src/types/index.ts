@@ -186,3 +186,97 @@ export interface IDataCriterionModel {
   language?: string;
   operator?: string;
 }
+
+export interface IModelModel {
+  id: string;
+  name: string;
+  fieldTypes: IFieldTypeModel[];
+  inboundLinkTypes: string[];
+  outboundLinkTypes: string[];
+  isLinkEntityType: boolean;
+  fieldSetIds: string[];
+  displayNameFieldTypeId: string;
+  displayDescriptionFieldTypeId: string;
+}
+
+export interface IFieldTypeModel  {
+  fieldTypeId: string;
+  fieldTypeDisplayName: string;
+  fieldTypeDescription: string;
+  fieldDataType: string;
+  isMultiValue: boolean;
+  isHidden: boolean;
+  isReadOnly: boolean;
+  isMandatory: boolean;
+  isUnique: boolean;
+  isExcludedFromDefaultView: boolean;
+  includedInFieldSets: string[];
+  categoryId: string;
+  index: number;
+  cvlId: string;
+  parentCvlId: string;
+  settings: {};
+}
+
+export interface ILanguageModel {
+  name?: string;
+  displayName?: string;
+}
+
+export interface IFieldSet {
+  fieldSetId?: string;
+  name?: string;
+  description?: string;
+  entityTypeId?: string;
+  fieldTypeIds?: string[];
+}
+
+export interface ICVL {
+  id: string;
+  parentId?: string;
+  dataType?: string;
+}
+
+export interface ICVLValueModel {
+  key: string;
+  value?: {};
+  index?: number;
+  parentKey?: string;
+}
+
+export interface ISpecificationTemplatesModel {
+  id?: number;
+  displayName?: string;
+  displayDescription?: string;
+  version?: string;
+  lockedBy?: string;
+  createdBy?: string;
+  createdDate?: string;
+  formattedCreatedDate?: string;
+  modifiedBy?: string;
+  modifiedDate?: string;
+  formattedModifiedDate?: string;
+  resourceUrl?: string;
+  entityTypeId?: string;
+  entityTypeDisplayName?: string;
+  completeness?: number;
+  fieldSetId?: string;
+  fieldSetName?: string;
+  segmentId?: number;
+  segmentName?: string;
+}
+
+export interface ISpecificationTemplateModel {
+  id?: string;
+  name?: {};
+  dataType?: string;
+  categoryId?: string;
+  defaultValue?: string;
+  format?: string;
+  unit?: string;
+  isDisabled?: true;
+  isMultiValue?: true;
+  isMandatory?: true;
+  index?: 0;
+  cvlId?: string;
+}

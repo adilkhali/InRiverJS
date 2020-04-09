@@ -1,5 +1,5 @@
-Inriver Node.js SDK
-======================
+Inriver js module
+=====================
 
 Installation
 ------------

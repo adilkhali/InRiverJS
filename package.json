@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "tslint -p tsconfig.json",
-    "prepare" : "npm run lint && npm run build"
+    "prepare": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,11 @@
     "url": "https://github.com/adilkhali/InRiverJS/issues"
   },
   "homepage": "https://github.com/adilkhali/InRiverJS",
-  "keywords": ["inrRiver", "ipmc","inrRiver JS"],
+  "keywords": [
+    "inrRiver",
+    "ipmc",
+    "inrRiver JS"
+  ],
   "devDependencies": {
     "@types/node": "^12.12.37",
     "ts-node": "^8.9.1",
@@ -30,5 +34,7 @@
   "dependencies": {
     "axios": "^0.19.2"
   },
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ]
 }

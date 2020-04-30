@@ -4,7 +4,7 @@ A simple wrapper for the inRiver IPMC REST API.
 ## Installation
 
     // npm
-    npm -i inriverjs --save
+    npm i inriverjs
 
     // yarn
     yarn add inriverjs

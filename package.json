@@ -1,6 +1,6 @@
 {
   "name": "inriverjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for the InRiver REST API",
   "author": "Adil Khali <adil.khali@gmail.com>",
   "license": "MIT",

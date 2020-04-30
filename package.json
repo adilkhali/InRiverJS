@@ -7,7 +7,6 @@
   "main": "./src/index.ts",
   "typings": "./src/index",
   "scripts": {
-    "start": "tsc",
     "build": "tsc"
   },
   "devDependencies": {

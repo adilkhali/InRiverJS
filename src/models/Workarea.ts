@@ -82,7 +82,7 @@ export default class Workarea {
   /**
    * Update workarea query
    */
-  public UpdateWorkarea(workareaFolderId: number, queryModel): AxiosPromise<IWorkAreaFolderModel> {
+  public UpdateWorkarea(workareaFolderId: number, queryModel: any): AxiosPromise<IWorkAreaFolderModel> {
     return this.request.getInstance().put(`workareafolder/${workareaFolderId}/query`, queryModel);
   }
 

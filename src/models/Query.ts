@@ -11,7 +11,7 @@ export default class Query {
   /**
    * Search for entity id's
    */
-  public search(queryJSON): AxiosPromise {
+  public search(queryJSON: any): AxiosPromise {
     return this.request.getInstance().post(`query`, queryJSON);
   }
 }

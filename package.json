@@ -7,12 +7,17 @@
   "main": "./src/index.ts",
   "typings": "./src/index",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/adilkhali/InRiverJS.git"
   },
+  "bugs": {
+    "url": "https://github.com/adilkhali/InRiverJS/issues"
+  },
+  "homepage": "https://github.com/adilkhali/InRiverJS",
   "devDependencies": {
     "@types/node": "^12.12.37",
     "ts-node": "^8.9.1",

@@ -1,5 +1,5 @@
 import Config from "./config";
-import { Channel, Syndicate, Query, System, Media, Link, Workarea, Model} from "./models";
+import { Channel, Syndicate, Query, System, Media, Link, Workarea, Model, Entity} from "./models";
 import { IRequest } from "./types";
 import Request from "./utils/request";
 
@@ -13,6 +13,7 @@ export default class InRiverAPIClient {
   private InRiverLink: Link;
   private InRiverWorkarea: Workarea;
   private InRiverModel: Model;
+  private InRiverEntity: Entity;
 
   constructor(
     apiKey: string,
@@ -84,5 +85,13 @@ export default class InRiverAPIClient {
     }
     this.InRiverModel = new Model(this.request);
     return this.InRiverModel;
+  }
+
+  public get Entities() {
+    if (this.InRiverEntity !== undefined) {
+      return this.InRiverEntity;
+    }
+    this.InRiverEntity = new Entity(this.request);
+    return this.InRiverEntity;
   }
 }

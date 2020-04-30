@@ -96,7 +96,7 @@ export interface ISegments {
   id: 0;
   name: string;
   description: string;
-  roles: IRoles[];
+  roles?: IRoles[];
 }
 
 export interface IMediaInfoModel {
@@ -346,4 +346,165 @@ export interface IEntityModel {
 export interface ISpecificationValueModel {
   specificationFieldTypeId: string ;
   value: {};
+}
+
+export interface IFetchObjectsModel{
+  entityIds : number[],
+  objects : "EntitySummary" | "FieldsSummary" | "FieldValues" | "SpecificationSummary" | "SpecificationValues" | "Media" | "MediaDetails",
+  fieldTypeIds? : string,
+  inbound? : IFetchLinkObjectsModel,
+  outbound? : IFetchLinkObjectsModel
+}
+
+export interface IFetchLinkObjectsModel {
+  linkTypeIds? : string,
+  objects? : string
+}
+
+export interface ISummaryModel{
+  entityId? : number,
+  linkTypeId? : string,
+  linkIndex? : number,
+  summary? : IEntitySummaryModel,
+  fields? : IFieldSummaryModel[],
+  fieldValues? : IFieldValueModel[],
+  specification? : ISpecificationValueSummaryModel[],
+  specificationValues? : ISpecificationValueModel[],
+  media? : string[],
+  mediaDetails? : IMediaInfoModel[],
+  inbound? : IEntityDataModel[],
+  outbound? : IEntityDataModel[]
+}
+
+export interface IFieldSummaryModel {
+  fieldTypeId? : string,
+  entityId? : number,
+  fieldTypeDisplayName? : string,
+  fieldTypeDescription? : string,
+  fieldDataType? : string,
+  value? : object,
+  displayValue? : object,
+  isMultiValue? : boolean,
+  isHidden? : boolean,
+  isReadOnly? : boolean,
+  isMandatory? : boolean,
+  isUnique? : boolean,
+  isExcludedFromDefaultView? : boolean,
+  includedInFieldSets? : string[],
+  categoryId? : string,
+  categoryName? : string,
+  index? : number,
+  revision? : number,
+  cvlId? : string,
+  parentCvlId? : string,
+  settings? : any
+}
+
+export interface ISpecificationValueSummaryModel {
+  entityId : number,
+  name : string,
+  categoryId : string,
+  value : object,
+  displayValue : object,
+  parentCvlId : string,
+  cvlId : string,
+  isMultiValue : boolean,
+  index : number,
+  isFormatted : boolean,
+  specificationFieldTypeId : string,
+  unit : string,
+  specificationDataType : string,
+  mandatory : boolean,
+  isHidden : boolean,
+  isReadOnly : boolean
+}
+
+export interface IEntityDataModel {
+  entityId : number,
+  linkTypeId : string,
+  linkIndex : number,
+  summary : IEntitySummaryModel,
+  fields : IFieldSummaryModel[],
+  fieldValues : IFieldValueModel[],
+  specification : ISpecificationValueSummaryModel[],
+  specificationValues : ISpecificationValueModel[],
+  media : string[],
+  mediaDetails : IMediaInfoModel[],
+  inbound : IEntityDataModel[],
+  outbound : IEntityDataModel[]
+}
+
+export interface ISetFieldSetModel{
+  fieldSetId? : string,
+  wipeOtherFields? : boolean
+}
+
+export interface ISpecificationModel{
+  entityId? : number,
+  name? : string,
+  categoryId? : string,
+  value? : object,
+  displayValue? : object,
+  parentCvlId? : string,
+  cvlId? : string,
+  isMultiValue? : boolean,
+  index? : number,
+  isFormatted? : boolean,
+  specificationFieldTypeId? : string,
+  unit? : string,
+  specificationDataType? : string,
+  mandatory? : boolean,
+  isHidden? : boolean,
+  isReadOnly? : boolean
+}
+
+export interface ISetSpecificationTemplateModel{
+  specificationId? : number
+}
+
+export interface ISetSegmentModel{
+  segmentId : number
+}
+
+export interface IEntityLinks{
+  id? :number,
+  isActive? :boolean,
+  linkTypeId :string,
+  sourceEntityId :number,
+  targetEntityId :number,
+  linkEntityId? :number,
+  index? :number
+}
+
+export interface IEntityBundleModel{
+  summary? : IEntitySummaryModel,
+  fields? : IFieldSummaryModel[],
+  specification? : ISpecificationValueSummaryModel[],
+  outbound? : IEntityBundleModel[],
+  inbound? : IEntityBundleModel[],
+  linkTypeId? : string,
+  linkIndex? : number
+}
+
+export interface ICommentsModel{
+  id? :number,
+  text :string,
+  author? :string,
+  createdDate? :string,
+  formattedCreatedDate? :string,
+  entityId? :number
+}
+
+export interface IBase64FileModel {
+  fileName: string;
+  data: string;
+}
+
+export interface IUrlFileModel {
+  fileName: string;
+  overrideUrlFileName: string;
+}
+
+export interface IExternalUrlFileModel {
+  url: string;
 }

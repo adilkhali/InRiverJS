@@ -6,6 +6,7 @@ import Media from "./Media";
 import Link from "./Link";
 import Workarea from "./Workarea";
 import Model from "./Model";
+import Entity from "./Entity";
 
 export {
   Channel,
@@ -15,5 +16,6 @@ export {
   Media,
   Link,
   Workarea,
-  Model
+  Model,
+  Entity
 };

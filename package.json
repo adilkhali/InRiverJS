@@ -7,20 +7,16 @@
   "main": "./src/index.ts",
   "typings": "./src/index",
   "scripts": {
-    "start": "tsc && node dist/test/index.test.js",
-    "build": "tsc",
-    "test": "jest"
+    "start": "tsc",
+    "build": "tsc"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
-    "@types/node": "^12.0.10",
-    "jest": "^24.8.0",
-    "ts-jest": "^24.0.2",
-    "ts-node": "^8.3.0",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "@types/node": "^12.12.37",
+    "ts-node": "^8.9.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "axios": "^0.19.0"
+    "axios": "^0.19.2"
   }
 }

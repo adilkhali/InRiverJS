@@ -1,6 +1,4 @@
 # inRiver JS 
-![inrRiver JS](https://www.inriver.com/wp-content/uploads/2019/06/InRiver-Logo-Final.png | width=100)
-
 A simple wrapper for the inRiver IPMC REST API.
 
 ## Installation
